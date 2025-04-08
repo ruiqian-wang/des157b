@@ -1,12 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <title>Home is...DES 157B!</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Add link to any google fonts used here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mansalva&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Meta tag for mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home is...</title>
+
+    <!-- My Script -->
+    <script src="script.js" defer></script>
+
 </head>
 
 <body>
-    <h1>Home is...</h1>
-</body>
-</html>
+    <div id="container">
+      <header>
+        <h1>Ruiqian Wang</h1>
+        <h1>DES 157B - Interactive Media III - Spring 2025</h1>
+        <a href="mailto:wrqwang@ucdavis.edu">Email</a>
+      </header>
+  
+      <div id="banner">
+        <div id="banner-text">
+          <h2>DES157B Portal</h2>
+          <h3 id="typing-text">Home is ... <span id="dots"></span><span class="cursor">|</span></h3>
+        </div>
+  
+
+      <button class="button" id="button-light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="222" height="143" viewBox="0 0 222 143" fill="none" class="button-svg">
+          <path d="M27.2632 72.0526L33.5545 60.8286H27.2632L33.5545 47.734H28.836L39.8457 29.0274" stroke="#6F8E88" stroke-width="3.79487" stroke-linecap="round"/>
+          <path d="M50.8552 72.0526L44.5639 60.3184H50.8552L44.5639 46.6286H49.2824L39.8455 29.0274" stroke="#6F8E88" stroke-width="3.79487" stroke-linecap="round"/>
+          <path d="M58.5229 13.3819L46.137 37.9677L49.5 46.5H45L51.5 60.5H45L51.5 72H60L72.8749 42.7173L58.5229 13.3819Z" fill="#DCE3D8" stroke="#6F8E88" stroke-width="3.79487" stroke-linecap="round"/>
+          <path d="M60.2924 72.0526L77.5934 32.9388L96.4672 72.0526" stroke="#6F8E88" stroke-width="3.79487" stroke-linecap="round"/>
+          <path d="M136.734 70.2051V38.8112H154.529M154.529 38.8112V20.8718H174.104V70.2051M154.529 38.8112V70.2051" stroke="#BECDCA" stroke-width="3.79487"/>
+          <path d="M173.316 52.3498L185 33.1053L196.684 52.3498V74" stroke="#BECDCA" stroke-width="3.79487"/>
+          <path d="M158.089 18.9744V13.282H171.435V20.8718" stroke="#BECDCA" stroke-width="3.79487"/>
+          <path d="M142.073 47.4359H150.081" stroke="#BECDCA" stroke-width="3.79487"/>
+          <path d="M142.073 55.0256H150.081" stroke="#BECDCA" stroke-width="3.79487"/>
+          <path d="M168.766 32.2564L168.766 39.8462" stroke="#BECDCA" stroke-width="3.0359"/>
+          <path d="M160.758 32.2564L160.758 39.8462" stroke="#BECDCA" stroke-width="3.0359"/>
+          <path d="M168.766 43.641L168.766 51.2308" stroke="#BECDCA" stroke-width="3.0359"/>
+          <path d="M160.758 43.641L160.758 51.2308" stroke="#BECDCA" stroke-width="3.0359"/>
+          <path d="M164.762 0V13.2821" stroke="#BECDCA" stroke-width="3.79487"/>
+          <circle cx="38.1984" cy="106.356" r="28.4615" fill="#6F8E88"/>
+          <rect x="1.89744" y="72.0027" width="218.205" height="68.2578" rx="34.1289" stroke="#6F8E88" stroke-width="3.79487"/>
+        </svg>
+      </button>
+
+      <!-- Dark Mode Button -->
+      <button class="button" id="button-dark" style="display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="222" height="143" viewBox="0 0 222 143" fill="none">
+            <path d="M27.2632 72.0526L33.5545 60.8286H27.2632L33.5545 47.734H28.836L39.8457 29.0274" stroke="#3D4963" stroke-width="3.79487" stroke-linecap="round"/>
+            <path d="M50.8552 72.0526L44.5639 60.3185H50.8552L44.5639 46.6286H49.2824L39.8455 29.0274" stroke="#3D4963" stroke-width="3.79487" stroke-linecap="round"/>
+            <path d="M58.5229 13.3819L46.137 37.9677L49.5 46.5H45L51.5 60.5H45L51.5 72H60L72.8749 42.7173L58.5229 13.3819Z" stroke="#3D4963" stroke-width="3.79487" stroke-linecap="round"/>
+            <path d="M60.2922 72.0526L77.5933 32.9388L96.4671 72.0526" stroke="#3D4963" stroke-width="3.79487" stroke-linecap="round"/>
+            <path d="M136.734 70.2051V38.8112H154.529M154.529 38.8112V20.8718H174.104V70.2051M154.529 38.8112V70.2051" stroke="#467EF7" stroke-width="3.79487"/>
+            <path d="M173.316 52.3498L185 33.1053L196.684 52.3498V74" stroke="#467EF7" stroke-width="3.79487"/>
+            <path d="M158.089 18.9744V13.282H171.435V20.8718" stroke="#467EF7" stroke-width="3.79487"/>
+            <path d="M142.073 47.4359H150.081" stroke="#467EF7" stroke-width="3.79487"/>
+            <path d="M142.073 55.0256H150.081" stroke="#467EF7" stroke-width="3.79487"/>
+            <path d="M168.766 32.2564L168.766 39.8462" stroke="#F79B46" stroke-width="3.0359"/>
+            <path d="M160.758 32.2564L160.758 39.8462" stroke="#F79B46" stroke-width="3.0359"/>
+            <path d="M168.766 43.641L168.766 51.2308" stroke="#F79B46" stroke-width="3.0359"/>
+            <path d="M160.758 43.641L160.758 51.2308" stroke="#F79B46" stroke-width="3.0359"/>
+            <path d="M164.762 0V13.2821" stroke="#467EF7" stroke-width="3.79487"/>
+            <circle cx="183.462" cy="106.356" r="28.4615" fill="#467EF7"/>
+            <rect x="1.89744" y="72.0027" width="218.205" height="68.2578" rx="34.1289" stroke="#467EF7" stroke-width="3.79487"/>
+          </svg>
+      </button>
+      </div>
+  
+      <main>
+        <section id="projects" class="card">
+          <div class="icon-title">
+            <div class="icon"><img src="images/Group 7.svg" alt="icon"></div>
+            <h4>Ministudios</h4>
+          </div>
+          <nav>
+            <ol>
+              <li><a href="#">blockbuster video</a></li>
+              <li><a href="#">check yourself</a></li>
+              <li><a href="#">library liberty</a></li>
+            </ol>
+          </nav>
+          <h4>Toolkit</h4>
+          <nav>
+            <ol>
+              <li><a href="#">Toolkit Assignment 1</a></li>
+              <li><a href="#">Toolkit Assignment 2</a></li>
+              <li><a href="#">Toolkit Assignment 3</a></li>
+            </ol>
+          </nav>
+        </section>
+  
+        <section id="research" class="card">
+          <div class="icon-title">
+            <div class="icon"><img src="images/Group 9.svg" alt="icon"></div>
+            <h4>Research</h4>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Research Assignment 1</a></li>
+              <li><a href="#">Research Assignment 2</a></li>
+              <li><a href="#">Research Assignment 3</a></li>
+              <li><a href="#">Research Assignment 4</a></li>
+              <li><a href="#">Research Assignment 5</a></li>
+              <li><a href="#">Research Assignment 6</a></li>
+            </ul>
+          </nav>
+        </section>
+  
+        <section id="development" class="card">
+          <div class="icon-title">
+            <div class="icon"><img src="images/Group 10.svg" alt="icon"></div>
+            <h4>Development</h4>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">Development Assignment 1</a></li>
+              <li><a href="#">Development Assignment 2</a></li>
+              <li><a href="#">Development Assignment 3</a></li>
+              <li><a href="#">Development Assignment 4</a></li>
+              <li><a href="#">Development Assignment 5</a></li>
+              <li><a href="#">Development Assignment 6</a></li>
+            </ul>
+          </nav>
+        </section>
+  
+        <section id="capstone" class="card">
+          <div class="icon-title">
+            <div class="icon"><img src="images/Group 11.svg" alt="icon"></div>
+            <h4>Capstone</h4>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#">case study</a></li>
+              <li><a href="#">project</a></li>
+            </ul>
+          </nav>
+        </section>
+      </main>
+  
+      <div id="bottom">
+        <img src="images/bottom.svg" alt="bottom image">
+      </div>
+    </div>
+  </body>
+  </html>
