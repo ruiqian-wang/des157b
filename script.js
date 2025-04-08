@@ -20,26 +20,26 @@
       imgs.forEach(img => {
         let src = img.getAttribute('src');
         if (darkMode) {
-          if (src === 'images/Group 7.svg') {
-            img.setAttribute('src', 'images/Group 14.svg');
-          } else if (src === 'images/Group 9.svg') {
-            img.setAttribute('src', 'images/Group 16.svg');
-          } else if (src === 'images/Group 10.svg') {
-            img.setAttribute('src', 'images/Group 15.svg');
-          } else if (src === 'images/Group 11.svg') {
-            img.setAttribute('src', 'images/Group 17.svg');
+          if (src === 'images/icon1.svg') {
+            img.setAttribute('src', 'images/icon1-1.svg');
+          } else if (src === 'images/icon2.svg') {
+            img.setAttribute('src', 'images/icon2-2.svg');
+          } else if (src === 'images/icon3.svg') {
+            img.setAttribute('src', 'images/icon3-3.svg');
+          } else if (src === 'images/icon4.svg') {
+            img.setAttribute('src', 'images/icon4-4.svg');
           } else if (src === 'images/bottom.svg') {
             img.setAttribute('src', 'images/bottom-dark.svg');
           }
         } else {
-          if (src === 'images/Group 14.svg') {
-            img.setAttribute('src', 'images/Group 7.svg');
-          } else if (src === 'images/Group 16.svg') {
-            img.setAttribute('src', 'images/Group 9.svg');
-          } else if (src === 'images/Group 15.svg') {
-            img.setAttribute('src', 'images/Group 10.svg');
-          } else if (src === 'images/Group 17.svg') {
-            img.setAttribute('src', 'images/Group 11.svg');
+          if (src === 'images/icon4-4.svg') {
+            img.setAttribute('src', 'images/icon4.svg');
+          } else if (src === 'images/icon3-3.svg') {
+            img.setAttribute('src', 'images/icon3.svg');
+          } else if (src === 'images/icon2-2.svg') {
+            img.setAttribute('src', 'images/icon2.svg');
+          } else if (src === 'images/icon1-1.svg') {
+            img.setAttribute('src', 'images/icon1.svg');
           } else if (src === 'images/bottom-dark.svg') {
             img.setAttribute('src', 'images/bottom.svg');
           }
