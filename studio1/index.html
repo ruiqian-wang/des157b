@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 1</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- My Styles -->
+    <link href="style.css" rel="stylesheet">
+
+    <!-- Meta tag for mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- My Script -->
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+    <i class="fa-regular fa-window-maximize"></i>
+
+    <div id="video-container">
+        <video id="myVideo" poster="images/image1.JPG"  muted autoplay loop playsinline>
+            <source src="media/video.mp4" type="video/mp4">
+            <source src="media/video.webm" type="video/webm">
+
+            <p>Your browser does not support the video tag
+                Here is a <a href="media/dog-video.mp4">link to the video</a> instead.
+            </p>
+    </video>
+
+    <!-- 滑动条 -->
+    <svg id="colorSlider" width="70" height="300" viewBox="0 0 70 300">
+        <!-- 滑轨：使用 slider.jpeg -->
+        <image id="sliderPath" x="20" width="30" height="300" href="images/slider.svg"/>
+        <!-- 滑块火焰：使用 slider-fire.jpeg -->
+        <image id="sliderFire" x="5" y="235" width="60" height="60" href="images/slider-fire.svg"/>
+    </svg>
+
+    <!-- 自定义控制按钮 -->
+    <div id="controls">
+        <button id="playPauseBtn"><i class="fa-solid fa-pause"></i></button>
+        <button id="muteBtn"><i class="fa-solid fa-volume-high"></i></button>
+        <button id="fullscreenBtn"><i class="fa-solid fa-up-down-left-right"></i></button>
+    </div>
+  </div>
+
+</body>
+</html>
