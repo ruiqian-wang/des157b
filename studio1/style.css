@@ -34,7 +34,6 @@
     cursor: pointer;
   }
   
-  /* 控制按钮 */
   #controls {
     position: absolute;
     bottom: 40px;

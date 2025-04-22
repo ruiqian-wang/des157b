@@ -1,0 +1,97 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Sour Gummy', cursive;
+  color: #111;
+  line-height: 1.5;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  gap: 3rem;
+}
+
+
+.timeline {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-right: 2px solid #f2f1f1;
+}
+
+.timeline h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.time-block {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.time {
+  font-size: 1rem;
+  color: #555;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f9c6c8;
+}
+
+.time-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.active .time {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.desc {
+  font-size: 1rem;
+  color: #444;
+}
+
+.color-display {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f7f7f7;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.swatch {
+  height: 200px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.info p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+}
