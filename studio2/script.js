@@ -1,83 +1,85 @@
 (function() {
-    "use strict";
+  'use strict';
 
-    var video = document.getElementById("myVideo");
-    var muteBtn = document.getElementById("muteBtn");
-    var playPauseBtn = document.getElementById("playPauseBtn");
-    var fullscreenBtn = document.getElementById("fullscreenBtn");
-    var slider = document.getElementById("colorSlider");
-    var sliderFire = document.getElementById("sliderFire");
+  let colorData;
+  let activePoint = 'point1';
 
-    var trackTop = 10;
-    var trackBottom = 290;
-    var fireHeight = 30;
-
-    var isDragging = false;
-
-    slider.addEventListener("mousedown", function(e) {
-        isDragging = true;
-        updateSlider(e);
-    });
-
-    document.addEventListener("mousemove", function(e) {
-        if (isDragging) {
-            updateSlider(e);
-        }
-    });
-
-    document.addEventListener("mouseup", function() {
-        isDragging = false;
-    });
-
-    function updateSlider(e) {
-        const svg = document.getElementById('colorSlider');
-        const svgRect = svg.getBoundingClientRect();
-        
-        let y = e.clientY - svgRect.top;
-        
-        const fireHeight = 60; // matches the height in SVG
-        
-        // restrict movement: from top of SVG to bottom of path minus fire height
-        y = Math.max(0, Math.min(y, 300 - fireHeight));
-        
-        // update fire position
-        sliderFire.setAttribute('y', y);
-        
-        // calculate and update grayscale value
-        const percentage = (300 - fireHeight - y) / (300 - fireHeight);
-        const grayscaleValue = (1 - percentage) * 100;
-        video.style.filter = `grayscale(${grayscaleValue}%)`;
+  function generateStarRating(rating, maxRating = 5) {
+    let stars = '';
+    for (let i = 1; i <= maxRating; i++) {
+      stars += i <= rating
+        ? '<i class="fa-solid fa-star star"></i>'
+        : '<i class="fa-solid fa-star star empty"></i>';
     }
+    return stars;
+  }
 
+  async function getData() {
+    try {
+      const resp = await fetch('data.json');
+      colorData = await resp.json();
+    } catch (err) {
+      console.error('Error loading color data:', err);
+      colorData = {
+        point1: { time: '9:00 AM',  colorName: 'soft orange',   hex: '#f9a76c', saturation: 4, brightness: 4, source: 'sunrise' },
+        point2: { time: '11:00 AM', colorName: 'green',         hex: '#7fc97f', saturation: 3, brightness: 5, source: 'grass in campus' },
+        point3: { time: '1:00 PM',  colorName: 'pink',          hex: '#f7b7c3', saturation: 4, brightness: 5, source: 'cherry blossom tree' },
+        point4: { time: '3:00 PM',  colorName: 'sky blue',      hex: '#87cefa', saturation: 2, brightness: 5, source: 'afternoon sky' },
+        point5: { time: '5:00 PM',  colorName: 'terracotta',    hex: '#7b4038', saturation: 5, brightness: 3, source: 'brick building' },
+        point6: { time: '7:00 PM',  colorName: 'orange',        hex: '#F29379', saturation: 4, brightness: 5, source: 'sunset' },
+        point7: { time: '9:00 PM',  colorName: 'midnight blue', hex: '#191970', saturation: 4, brightness: 1, source: 'night sky' }
+      };
+    }
+    createTimeBlocks();
+    updateColorDisplay(activePoint);
+  }
 
-    muteBtn.addEventListener("click", function() {
-        video.muted = !video.muted;
-        var icon = muteBtn.querySelector("i");
-        if (video.muted) {
-            icon.className = "fa-solid fa-volume-xmark";
-        } else {
-            icon.className = "fa-solid fa-volume-high";
-        }
+  function createTimeBlocks() {
+    const container = document.querySelector('#time-blocks');
+    container.innerHTML = '';
+    Object.keys(colorData).forEach(pointId => {
+      const data = colorData[pointId];
+
+      const block = document.createElement('div');
+      block.classList.add('time-block');
+      block.id = pointId;
+
+      const circle = document.createElement('div');
+      circle.classList.add('circle');
+      circle.innerHTML = `<img src="images/${pointId}.jpg" alt="${data.colorName}">`;
+
+      const info = document.createElement('div');
+      info.classList.add('time-info');
+      info.innerHTML = `<span class="time">${data.time}</span>
+                        <span class="desc">${data.source}</span>`;
+
+      block.append(circle, info);
+
+      block.addEventListener('click', () => updateColorDisplay(pointId));
+
+      container.appendChild(block);
     });
+  }
 
-    playPauseBtn.addEventListener("click", function() {
-        var icon = playPauseBtn.querySelector("i");
-        if (video.paused) {
-            video.play();
-            icon.className = "fa-solid fa-pause";
-        } else {
-            video.pause();
-            icon.className = "fa-solid fa-play";
-        }
-    });
+  function updateColorDisplay(pointId) {
+    const data = colorData[pointId];
+    if (!data) return;
 
-    fullscreenBtn.addEventListener("click", function() {
-        if (!document.fullscreenElement) {
-            video.requestFullscreen().catch(function(err) {
-                console.error("Error attempting to enable full-screen mode: " + err.message);
-            });
-        } else {
-            document.exitFullscreen();
-        }
-    });
+    document.querySelectorAll('.time-block').forEach(b => b.classList.remove('active'));
+    document.getElementById(pointId).classList.add('active');
+
+    document.getElementById('color-name').textContent      = data.colorName;
+    document.getElementById('color-swatch').innerHTML      = `<img src="images/${pointId}.jpg" alt="${data.colorName}">`;
+    document.getElementById('time-value').textContent      = data.time;
+    document.getElementById('hex-value').textContent       = data.hex;
+    document.getElementById('source-value').textContent    = data.source;
+    document.getElementById('saturation-rating').innerHTML = generateStarRating(data.saturation);
+    document.getElementById('brightness-rating').innerHTML = generateStarRating(data.brightness);
+    document.querySelector('.color-display').style.backgroundColor = data.hex;
+
+    activePoint = pointId;
+  }
+
+  getData();
+
 })();

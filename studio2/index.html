@@ -3,55 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio 1</title>
+    <title>Color Perception Timeline</title>
 
-    <!-- Normalize CSS for browser compatability -->
+    <!-- Normalize CSS for browser compatibility -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- My Styles -->
-    <link href="style.css" rel="stylesheet">
-
-    <!-- Meta tag for mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- My Styles -->
+    <link href="style.css" rel="stylesheet">
 
     <!-- My Script -->
     <script src="script.js" defer></script>
 </head>
 
-
 <body>
     <main class="container">
         <section class="timeline">
-          <h1>My Color Perception Timeline</h1>
-          <div class="time-block">
-            <span class="time">9:00</span>
-          </div>
-          <div class="time-block active">
-            <div class="circle"></div>
-            <div class="time-info">
-              <span class="time">9:00</span>
-              <span class="desc">cherry blossom</span>
+            <h1>My Color Perception Timeline</h1>
+            <div class="time-blocks" id="time-blocks">
+                <!-- Time blocks will be generated via JavaScript -->
             </div>
-          </div>
-          <div class="time-block"><span class="time">9:30</span></div>
-          <div class="time-block"><span class="time">9:45</span></div>
-          <div class="time-block"><span class="time">10:15</span></div>
         </section>
     
         <section class="color-display">
-          <div class="swatch" style="background-color: #f9c6c8;"></div>
-          <div class="info">
-            <p><strong>#f9c6c8</strong></p>
-            <p>Source: <strong>cherry blossom</strong></p>
-          </div>
+            <h2 class="color-name" id="color-name">Loading...</h2>
+            <div class="swatch" id="color-swatch"></div>
+            <div class="info">
+                <p><span class="label">Time:</span> <span class="value" id="time-value">--:--</span></p>
+                <p><span class="label">Hex:</span> <span class="value" id="hex-value">#------</span></p>
+                <p><span class="label">Source:</span> <span class="value" id="source-value">---</span></p>
+                <p>
+                    <span class="label">Saturation:</span> 
+                    <span class="rating" id="saturation-rating">
+                        <!-- Stars will be generated via JavaScript -->
+                    </span>
+                </p>
+                <p>
+                    <span class="label">Brightness:</span> 
+                    <span class="rating" id="brightness-rating">
+                        <!-- Stars will be generated via JavaScript -->
+                    </span>
+                </p>
+            </div>
         </section>
-      </main>
+    </main>
 </body>
 </html>
