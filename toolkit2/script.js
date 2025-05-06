@@ -64,7 +64,10 @@ for (let i = 0; i < editBtns.length; i++){
         event.preventDefault();
         editFriendForm.className = 'edit-friend-onscreen';
     });
+
 }
+
+friendsList.appendChild(theListItem);
 
 editFriendForm.addEventListener('submit', function(event){
     event.preventDefault();

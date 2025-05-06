@@ -1,0 +1,249 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#canvas-basic {
+  position: fixed;   
+  top: 0;             
+  left: 0;
+  width: 100vw;       
+  height: 100vh;      
+  z-index: -1;        
+  pointer-events: none; 
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Fredoka', sans-serif;
+  background-color: #fefaf5;
+  color: #5a4b44;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding-top: 20px;
+}
+
+header h1 {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 3rem;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+}
+
+header p {
+  font-size: 1.2rem;
+  font-family: "Sour Gummy", sans-serif;
+  color: #8a7b72;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: rgba(248, 245, 236, 0.6);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+  font-family: 'Fredericka the Great', cursive;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.draggable {
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  touch-action: none;
+  user-select: none;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.draggable img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.draggable:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+.draggable img {
+  width: 100px;
+  height: auto;
+}
+
+.main-area {
+  width: 100%;
+  background-color: rgba(255, 253, 249, 0.6);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.design-zone {
+  width: 500px;
+  height: 500px;
+  border: 2px dashed #d4cfc7;
+  border-radius: 12px;
+  background: url('images/background.jpg') center/cover no-repeat;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-wrap: nowrap;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.reset-btn {
+  background-color: #ccc4bd;
+  color: #5a4b44;
+}
+
+.download-btn {
+  background-color: #e37864;
+  color: white;
+}
+
+.placed-item {
+  cursor: move;
+  z-index: 10;
+}
+
+.placed-item img {
+  width: 100px;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+footer a {
+  color: #5a4b44;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .sidebar, .main-area {
+    width: 100%;
+  }
+  
+  .items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .design-zone {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .design-zone {
+    height: 350px;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}

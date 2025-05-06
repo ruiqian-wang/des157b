@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Liberty</title>
+    
+    <!-- Normalize CSS for browser compatibility -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <!-- My Styles -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <canvas id="canvas-basic"></canvas>
+
+    <header>
+      <h1>Doghouse Designer</h1>
+      <p>Create a cozy space for your furry friend 🐾</p>
+    </header>
+    
+    <div class="container">
+        <div class="sidebar">
+            <h2>Drag These Items</h2>
+            <div class="items">
+                <div class="draggable"><img src="images/paw.png" alt="paw"></div>
+                <div class="draggable"><img src="images/bowl.png" alt="bowl"></div>
+                <div class="draggable"><img src="images/flower1.png" alt="flower1"></div>
+                <div class="draggable"><img src="images/flower2.png" alt="flower2"></div>
+                <div class="draggable"><img src="images/flower3.png" alt="flower3"></div>
+                <div class="draggable"><img src="images/bed.png" alt="bed"></div>
+            </div>
+        </div>
+        
+        <div class="main-area">
+            <div class="design-zone" id="designZone">
+            </div>
+            
+            <div class="buttons">
+                <button class="reset-btn" id="resetBtn">
+                  <i class="fas fa-undo"></i> Reset Design
+                </button>
+                <button class="download-btn" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download Design
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+      <p>Built with <a href="https://interactjs.io/">interact.js</a> and <a href="https://sarcadass.github.io/granim.js/index.html">granim.js</a></p>
+      <p>Designed and Coded by Ruiqian Wang</p>
+    </footer>
+
+   <!-- libraries -->
+
+  <script type="module">
+    import interact from 'https://cdn.interactjs.io/v1.9.20/interactjs/index.js'
+          
+    const position = { x: 0, y: 0 }
+      
+    interact('.draggable').draggable({
+      listeners: {
+        start (event) {
+        console.log(event.type, event.target)
+        },
+        move (event) {
+        position.x += event.dx
+        position.y += event.dy
+      
+        event.target.style.transform =
+        `translate(${position.x}px, ${position.y}px)`
+        },
+      }
+    })
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js" defer></script>
+
+
+
+  <!-- My Script -->
+  <script src="script.js" defer></script>
+
+
+    
+    
+</body>
+</html>
