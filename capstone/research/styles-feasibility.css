@@ -44,10 +44,10 @@ h1 {
 
 
 h2 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: var(--accent-color);
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
+  /* margin-bottom: 1.5rem; */
+  padding-bottom: 0.5rem;
   font-weight: 600;
 }
 
@@ -66,9 +66,9 @@ h2 {
 }
 
 .content-section a {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--accent-color);
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -79,25 +79,11 @@ h2 {
   font-weight: 700;
 }
 
-video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
 p {
   color: var(--text-color);
   font-size: 1.125rem;
   margin-bottom: 1.2rem;
-  line-height: 1.8;
+  /* line-height: 1.8; */
 }
 
 strong {
