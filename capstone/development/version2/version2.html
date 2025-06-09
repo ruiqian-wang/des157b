@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>version1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>
+    <!-- No additional lines needed; the updated module handles the custom element -->
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <section class="hero">
+        <div class="spline-container">
+            <spline-viewer url="https://prod.spline.design/3M1p0NzWWGEhDM-2/scene.splinecode"></spline-viewer>
+        </div>
+    </section>
+
+    <section class="timeline">
+        <div class="timeline-decorations">
+            <div class="floating-shape circle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="floating-shape triangle" style="left: 25%; animation-delay: -2s;"></div>
+            <div class="floating-shape diamond" style="left: 40%; animation-delay: -4s;"></div>
+            <div class="floating-shape circle" style="left: 55%; animation-delay: -1s;"></div>
+            <div class="floating-shape triangle" style="left: 70%; animation-delay: -3s;"></div>
+            <div class="floating-shape diamond" style="left: 85%; animation-delay: -5s;"></div>
+        </div>
+
+        <h2>Education Futures Timeline</h2>
+        <h1>Scroll to explore how learning<br>might evolve from 2025 to 2035</h1>
+        <div class="timeline-track">
+        <div class="timeline-item">
+            <spline-viewer url="https://prod.spline.design/PWPdiJC6ism7N4sb/scene.splinecode"></spline-viewer>
+            <div class="timeline-content">
+                <div class="timeline-number">01</div>
+                <div class="timeline-title">Personalized AI Tutors Go Mainstream</div>
+                <div class="timeline-description">
+                    AI-powered tutoring systems are now embedded in most learning platforms. Students receive real-time support that are designed to their needs, making learning 
+                    more adaptive. But this also raises ethical questions about surveillance and bias.
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <spline-viewer url="https://prod.spline.design/PWPdiJC6ism7N4sb/scene.splinecode"></spline-viewer>
+            <div class="timeline-content">
+              <div class="timeline-number">02</div>
+              <div class="timeline-title">Immersive VR/AR Classrooms</div>
+              <div class="timeline-description">
+                AR and VR tools allow learners to experience historical events, explore scientific simulations, and practice complex skills in safe virtual environments. While engagement and retention improve, debates grow about cost, accessibility, and screen time effects.
+              </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <spline-viewer url="https://prod.spline.design/PWPdiJC6ism7N4sb/scene.splinecode"></spline-viewer>
+            <div class="timeline-content">
+                <div class="timeline-number">03</div>
+                <div class="timeline-title">AI-Powered Career Guidance</div>
+                <div class="timeline-description">
+                    Advanced AI systems help students continuously map potential career paths based on emerging job markets and personal interests. While many benefit from personalized guidance, critics warn of algorithmic bias steering life decisions.
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <spline-viewer url="https://prod.spline.design/PWPdiJC6ism7N4sb/scene.splinecode"></spline-viewer>
+            <div class="timeline-content">
+                <div class="timeline-number">04</div>
+                <div class="timeline-title">Widening Digital Divide Limits Access</div>
+                <div class="timeline-description">
+                    As immersive and AI-powered education becomes the norm, the gap between well-resourced learners and marginalized groups deepens. Rural and low-income students face barriers to accessing the latest tools, and raising fears of a two-tiered education system.
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <spline-viewer url="https://prod.spline.design/PWPdiJC6ism7N4sb/scene.splinecode"></spline-viewer>
+            <div class="timeline-content">
+                <div class="timeline-number">05</div>
+                <div class="timeline-title">Data-Driven Learning Sparks Privacy Backlash</div>
+                <div class="timeline-description">
+                    Education systems collect increasingly granular data on student behaviors and cognitive patterns. While marketed as “personalization,” public concern grows about the long-term consequences of lifelong learning profiles.
+                </div>
+            </div>
+        </div>
+
+        </div>
+        <div class="timeline-progress">
+            <div class="progress-bar">
+                <div class="timeline-plane">
+                    <div class="plane-contrail"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="86" height="44" viewBox="0 0 86 44" fill="none">
+                        <path d="M25.6123 12.0479L12.3117 15.0282C12.3117 16.9248 13.3974 18.5503 26.4266 16.6537C27.078 18.8212 36.8318 25.143 41.6273 28.033C28.96 30.2908 3.19128 34.969 1.45406 35.6192C-0.717468 36.432 3.0827 37.7867 5.25423 38.8704C7.42575 39.9542 50.5848 34.8064 51.942 34.8064C53.0278 34.8064 56.3755 36.7933 57.9137 37.7867C65.5141 41.0379 81.2033 46.5108 83.1577 42.3926C85.1121 38.2744 75.4669 31.1036 70.4 28.033C75.1049 23.0659 84.732 12.9148 85.6007 12.0479C86.6864 10.9642 83.1577 10.9641 82.0719 10.1513C81.2033 9.50105 66.5093 19.0922 59.2709 23.969L34.0269 13.1316L40.5415 9.06755C39.7272 8.7063 37.6642 7.92962 35.927 7.71287C34.1898 7.49613 31.584 9.24817 30.4982 10.1513C30.1363 8.52569 28.9781 4.73262 27.2409 2.56514C25.5037 0.397659 24.5265 0.758906 24.2551 1.21047L25.6123 12.0479Z" fill="#5597ED"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore">
+        <h2>Explore Your Learning World</h2>
+        <button class="interactive-btn">Interactive 3D model</button>
+    </section>
+
+    <section class="question">
+        <div class="choice-section">
+            <div class="choice-question">Do you want to be part of that future?</div>
+            <div class="choice-buttons">
+                <button class="choice-btn yes" id="yesBtn">Yes</button>
+                <button class="choice-btn no" id="noBtn">No</button>
+            </div>
+        </div>
+
+    </section>
+
+
+<script src="script.js"></script>
+</body>
+</html>
