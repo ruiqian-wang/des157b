@@ -1,0 +1,460 @@
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /*  Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('images/background.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        .spline-container {
+            position: relative;
+            z-index: 2;
+            width: 140%;
+            height: auto;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        spline-viewer {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        /* Timeline Section */
+        .timeline {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            padding: 2rem 0;
+            display: block;
+            text-align: center;
+        }
+
+
+        /*  Geometric Shapes */
+        .timeline-decorations {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.3;
+            animation: floatAround 12s linear infinite;
+        }
+
+        .floating-shape.circle {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #4a90e2, #6bb6ff);
+            border-radius: 50%;
+        }
+
+        .floating-shape.triangle {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 17px solid #ff6b6b;
+        }
+
+        .floating-shape.diamond {
+            width: 16px;
+            height: 16px;
+            background: #ffa726;
+            transform: rotate(45deg);
+        }
+
+        @keyframes floatAround {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .timeline h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a90e2;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4em;
+            position: relative;
+            z-index: 3;
+        }
+
+        .timeline h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            color: #333;
+            margin-top: 1em;
+            margin-bottom: 3em;
+            font-weight: 700;
+            position: relative;
+            z-index: 3;
+        }
+
+        /*  Timeline Track */
+        .timeline-track {
+            display: flex;
+            width: max-content;
+            position: relative;
+            z-index: 3;
+        }
+
+        
+        .timeline-item {
+            padding: 1rem;
+            flex: 0 0 100vw;
+            max-width: none;
+            margin: 0;
+            opacity: 1 !important;
+            transform: none !important;
+            animation: none !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.6s ease;
+        }
+
+        /*  Timeline Item Glow Effect */
+        .timeline-item.active {
+            background: radial-gradient(ellipse at center, rgba(74, 144, 226, 0.1) 0%, transparent 70%);
+        }
+
+        .timeline-item.active spline-viewer {
+            transform: scale(1.05);
+        }
+
+        .timeline-item spline-viewer {
+            max-width: 18em;
+            max-height: 18em;
+            transition: all 0.6s ease;
+            border-radius: 20px;
+        }
+
+        .timeline-content {
+            max-width: 800px;
+            text-align: left;
+            padding: 2rem;
+            
+        }
+
+        .timeline-number {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a90e2;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {   
+            font-family: poppins, sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            font-family: poppins, sans-serif;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .timeline-progress {
+            position: absolute;
+            bottom: 60px;
+            left: 5%;
+            width: 90%;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(74, 144, 226, 0.2);
+            z-index: 10;
+            overflow: visible;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #b6e7ffa4, #9accff, #4a90e2);
+            border-radius: 20px;
+            transition: width 0.2s ease;
+            position: relative;
+            box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
+        }
+
+        /* plane */
+        .timeline-plane {
+            position: absolute;
+            top: -25px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            z-index: 15;
+            filter: drop-shadow(0 4px 12px rgba(74, 144, 226, 0.4));
+        }
+
+        .plane-svg {
+            width: 100%;
+            height: 100%;
+            animation: planeBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes planeBounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+
+
+        /* Progress Milestone Markers */
+        .progress-markers {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            width: 100%;
+            height: 28px;
+            pointer-events: none;
+        }
+
+        .progress-marker {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #4a90e2, #6bb6ff);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.4);
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            transition: all 0.3s ease;
+        }
+
+        .progress-marker.active {
+            transform: translateY(-50%) translateX(-50%) scale(1.3);
+            box-shadow: 0 4px 20px rgba(74, 144, 226, 0.8);
+        }
+
+        .progress-marker::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Progress Wave Effect */
+        .progress-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%);
+            border-radius: 20px;
+            transform: translateX(-100%);
+            animation: progressWave 3s ease-in-out infinite;
+        }
+
+        @keyframes progressWave {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Explore Section */
+        .explore {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(135deg, #6bb6ff, #4a90e2);
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .explore h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            font-weight: 800;
+            margin-top: 0.1rem;
+        }
+
+        .explore-spline-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 70vh;
+            max-width: 1400px;
+            border-radius: 20px;
+            overflow: hidden;
+            z-index: 2;
+            position: relative;
+        }
+
+        .explore-spline-container spline-viewer {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+
+        /*  Question Section */
+        .question {
+            min-height: 30vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .choice-section {
+            margin-top: 3rem;
+        }
+
+        .choice-question {
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 1.6rem;
+            font-style: normal;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .choice-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .choice-btn {
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 10.5rem;
+            height: 3.5rem;
+        }
+
+        .choice-btn.yes {
+            background: #D5E0A2;
+            color: #2d5a2d;
+        }
+
+        .choice-btn.no {
+            background: #f6b8c1;
+            color: #8B0000;
+        }
+
+        .choice-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .timeline-progress {
+                left: 2%;
+                width: 96%;
+            }
+            
+            .timeline-plane {
+                width: 30px;
+                height: 30px;
+                top: -20px;
+            }
+            
+            .plane-contrail {
+                width: 100px;
+            }
+            
+            .progress-marker {
+                width: 12px;
+                height: 12px;
+            }
+        }
